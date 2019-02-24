@@ -10,5 +10,5 @@ dependencies {
     implementation 'nz.ac.waikato.cms.weka:weka-dev:3.9.3'
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
+sourceCompatibility = "28"
+targetCompatibility = "28"

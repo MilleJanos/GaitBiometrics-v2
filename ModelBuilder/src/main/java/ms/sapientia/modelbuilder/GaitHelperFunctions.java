@@ -1,12 +1,28 @@
 package ms.sapientia.modelbuilder;
 //package ro.sapientia.gaitbiom;
 
-import FeatureExtractorLibrary.FeatureExtractor;
-import FeatureExtractorLibrary.Settings;
-import ms.sapientia.modelbuilder.GaitModelBuilder;
-import ms.sapientia.modelbuilder.GaitVerification;
-import ms.sapientia.modelbuilder.IGaitModelBuilder;
-import ms.sapientia.modelbuilder.IGaitVerification;
+// import FeatureExtractorLibrary.FeatureExtractor;
+// import FeatureExtractorLibrary.Settings;
+// import ms.sapientia.modelbuilder.GaitModelBuilder;
+// import ms.sapientia.modelbuilder.GaitVerification;
+// import ms.sapientia.modelbuilder.IGaitModelBuilder;
+// import ms.sapientia.modelbuilder.IGaitVerification;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import ms.sapientia.featureextractor.FeatureExtractor;
+import ms.sapientia.featureextractor.Settings;
 import weka.classifiers.Classifier;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Attribute;
@@ -14,12 +30,6 @@ import weka.core.Debug;
 import weka.core.Instances;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.Normalize;
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class GaitHelperFunctions {
     private static final String MODEL_FILE = "INPUT_ARFF/model_WsY044SgeaeZtDrQKVpRyWpo7hx1.arff";
@@ -47,7 +57,6 @@ public class GaitHelperFunctions {
         files.add(FEATURE_USER_FILE1);
         files.add(FEATURE_USER_FILE2);
         files.add(FEATURE_USER_FILE3);
-
 
         try {
             mergeFeatureFiles(files, FEATURE_USER_FILE);

@@ -2,24 +2,31 @@ package ms.sapientia.modelbuilder;
 
 //package ro.sapientia.gaitbiom;
 
-import FeatureExtractorLibrary.*;
+// import FeatureExtractorLibrary.*;
+
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import ms.sapientia.featureextractor.Accelerometer;
+import ms.sapientia.featureextractor.Feature;
+import ms.sapientia.featureextractor.FeatureExtractor;
+import ms.sapientia.featureextractor.FeatureExtractorException;
+import ms.sapientia.featureextractor.IUtil;
+import ms.sapientia.featureextractor.Settings;
 import weka.classifiers.Classifier;
 import weka.core.Attribute;
 import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
 
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import static FeatureExtractorLibrary.FeatureExtractor.extractFeaturesFromArrayListToArrayListOfFeatures;
+// import static FeatureExtractorLibrary.FeatureExtractor.extractFeaturesFromArrayListToArrayListOfFeatures;
 
 public class GaitVerification implements IGaitVerification {
     private double verifyUser(Classifier classifier, ArrayList<Attribute> attributes, ArrayList<Accelerometer> rawdata, IUtil utility, String userName) {
         ArrayList<Feature> features = null;
         try{
-            features = extractFeaturesFromArrayListToArrayListOfFeatures(rawdata, userName);
+            features = FeatureExtractor.extractFeaturesFromArrayListToArrayListOfFeatures(rawdata, userName);
         }
         catch (FeatureExtractorException ex){
             Logger.getLogger(GaitVerification.class.getName()).log(Level.SEVERE, null, ex);
@@ -95,7 +102,7 @@ public class GaitVerification implements IGaitVerification {
         ArrayList<Feature> features = null;
         try{
             //String userName = "ttJMxBAjuHNVLCKhaXNvBTFDbIc2";
-            features = extractFeaturesFromArrayListToArrayListOfFeatures(rawdata, userName);
+            features = FeatureExtractor.extractFeaturesFromArrayListToArrayListOfFeatures(rawdata, userName);
         }
         catch (FeatureExtractorException ex){
             Logger.getLogger(GaitVerification.class.getName()).log(Level.SEVERE, null, ex);
