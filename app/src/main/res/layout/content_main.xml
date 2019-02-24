@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    android:background="@drawable/green_background_50"
+    tools:showIn="@layout/app_bar_main">
+
+    <Button
+        android:id="@+id/startRecButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_selector"
+        android:fontFamily="@font/aldrich"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:shadowRadius="@android:integer/config_longAnimTime"
+        android:text="Start"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recordInfoTextView" />
+
+    <Button
+        android:id="@+id/stopRecButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_selector"
+        android:fontFamily="@font/aldrich"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:shadowRadius="@android:integer/config_longAnimTime"
+        android:text="Stop"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startRecButton" />
+
+    <Button
+        android:id="@+id/saveRecordedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:background="@drawable/button_selector"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:fontFamily="@font/aldrich"
+        android:shadowRadius="@android:integer/config_longAnimTime"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stopRecButton" />
+
+    <TextView
+        android:id="@+id/accelerometerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/aldrich"
+        android:text="accelerometerTextView"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/graph" />
+
+    <TextView
+        android:id="@+id/recordInfoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/aldrich"
+        android:text="recordInfoTextView"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accelerometerTextView" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph"
+        android:layout_width="match_parent"
+        android:layout_height="189dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

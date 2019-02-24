@@ -1,0 +1,15 @@
+//apply plugin: 'java-library'
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'nz.ac.waikato.cms.weka:weka-dev:3.9.3'
+    //implementation 'ms.sapientia.featureextractor.FeatureExtractor'
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
